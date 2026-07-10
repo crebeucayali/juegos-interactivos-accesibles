@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gabriel-lsp.github.io/juegos-interactivos-accesibles/sitemap.xml
+Sitemap: https://crebeucayali.github.io/juegos-interactivos-accesibles/sitemap.xml
