@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plataforma de juegos interactivos accesibles para practicar Lengua de Señas Peruana y sistema Braille.">
+  <title>Juegos Interactivos Accesibles</title>
+  <link rel="stylesheet" href="estilos.css?v=3">
+  <link rel="stylesheet" href="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.css?v=6">
+  <style>
+    .grid-materiales{grid-template-columns:repeat(3,1fr);}
+    .tarjeta-material h3{min-height:48px;}
+    .tarjeta-material.en-construccion{background:#ffffff;border-color:#d9e2ec;opacity:.92;}
+    .estado-material.construccion{background:#fff8e5;color:#725918;border:1px solid #ebd599;}
+    .enlace-material.deshabilitado{background:#d9e2ec;color:#486581;cursor:not-allowed;pointer-events:none;}
+    .enlaces-cabecera{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:12px;}
+    .footer-marca{display:flex;align-items:flex-start;gap:16px;}
+    .footer-logo{width:72px;max-width:72px;height:auto;object-fit:contain;display:block;flex-shrink:0;}
+    .footer-contenido{grid-template-columns:1.2fr 1fr 1.25fr;gap:32px;}
+    .footer-bloque a{text-decoration:underline;text-underline-offset:3px;}
+    .patron-portada{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+      pointer-events:none;
+      background-image:url("patron-shipibo.webp");
+      background-repeat:repeat;
+      background-size:cover;
+      background-position:center;
+      opacity:.30;
+      filter:saturate(1.15) contrast(1.08);
+    }
+    .cabecera .navegacion,
+    .cabecera .portada{position:relative;z-index:1;}
+    .marca-institucional{align-items:center;gap:14px;max-width:min(560px,100%);}
+    .marca-logo-superior{display:block;width:58px;height:58px;object-fit:contain;flex-shrink:0;padding:4px;background:rgba(255,255,255,.96);border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.14);}
+    .marca-texto-superior{display:block;padding-left:14px;border-left:2px solid rgba(255,255,255,.35);text-shadow:0 2px 4px rgba(0,0,0,.28);}
+    .marca-modulo{display:block;margin:0 0 3px;color:#c9f7ee;font-size:.76rem;font-weight:900;line-height:1.15;letter-spacing:.16em;text-transform:uppercase;}
+    .marca-nombre-institucional{display:block;color:#ffffff;font-size:1.02rem;font-weight:900;line-height:1.2;}
+    .marca-detalle-institucional{display:block;margin-top:4px;color:rgba(255,255,255,.94);font-size:.88rem;font-weight:750;line-height:1.25;}
+    @media (max-width:1000px){.grid-materiales{grid-template-columns:repeat(2,1fr);}}
+    @media (max-width:700px){.grid-materiales,.footer-contenido{grid-template-columns:1fr;}.enlaces-cabecera{justify-content:flex-start;}.footer-marca{align-items:center;}.footer-logo{width:60px;max-width:60px;}.marca-institucional{align-items:flex-start;}.marca-logo-superior{width:52px;height:52px;border-radius:16px;}.marca-texto-superior{padding-left:12px;}.marca-nombre-institucional{font-size:.94rem;}.marca-detalle-institucional{font-size:.82rem;}}
+  </style>
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header class="cabecera">
+    <div class="patron-portada" aria-hidden="true"></div>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca marca-institucional" href="index.html" aria-label="Volver al inicio de Juegos Interactivos Accesibles">
+        <img class="marca-logo-superior" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <span class="marca-texto-superior">
+          <span class="marca-modulo">Juegos Interactivos Accesibles</span>
+          <span class="marca-nombre-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+          <span class="marca-detalle-institucional">Centro de Recursos de Educación Básica Especial</span>
+        </span>
+      </a>
+
+      <div class="enlaces-cabecera">
+        <a href="https://crebe-ucayali.netlify.app/" class="enlace-cabecera">Inicio principal</a>
+        <a href="https://gabriel-lsp.github.io/accesos-complementarios/contacto.html" class="enlace-cabecera">Contacto Institucional</a>
+      </div>
+    </nav>
+
+    <div class="portada">
+      <p class="etiqueta">Plataforma educativa accesible</p>
+      <h1>Juegos interactivos accesibles</h1>
+      <p class="subtitulo">
+        Actividades digitales para practicar Lengua de Señas Peruana y sistema Braille mediante retos visuales,
+        memoria, asociación y reconocimiento de signos.
+      </p>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="panel-principal" aria-labelledby="titulo-juegos">
+      <div class="panel-encabezado">
+        <div>
+          <p class="sobretitulo">Banco de juegos</p>
+          <h2 id="titulo-juegos">Seleccione un juego interactivo</h2>
+          <p class="texto-panel">
+            Las primeras actividades están orientadas al reconocimiento de señas, signos Braille, memoria visual y conteo.
+            Los demás módulos quedan disponibles como espacios proyectados para próximas versiones.
+          </p>
+        </div>
+      </div>
+
+      <section class="bloque-presentacion" aria-label="Presentación del recurso">
+        <div class="panel-presentacion">
+          <h2>Propósito del recurso</h2>
+          <p>
+            Este espacio reúne juegos breves, accesibles y de uso sencillo para fortalecer la práctica educativa.
+            Está pensado como apoyo para docentes, estudiantes y familias en actividades de reconocimiento,
+            asociación, conteo y aprendizaje progresivo.
+          </p>
+        </div>
+
+        <div class="aviso-pedagogico">
+          <h2>Orientación de uso</h2>
+          <p>
+            Seleccione un juego, lea la consigna y responda según la imagen, palabra, signo o cantidad presentada.
+            Los juegos pueden utilizarse en aula, sesiones de apoyo o actividades familiares.
+          </p>
+        </div>
+      </section>
+
+      <section class="grid-materiales" aria-label="Listado de juegos interactivos">
+        <article class="tarjeta-material disponible">
+          <div>
+            <div class="material-icono" aria-hidden="true">01</div>
+            <h3>Adivina la seña</h3>
+            <p>
+              Observe la imagen de una seña y seleccione la palabra correcta entre cinco alternativas.
+              Incluye niveles básico, intermedio y avanzado con reconocimiento simbólico de logro.
+            </p>
+          </div>
+
+          <div class="tarjeta-pie">
+            <span class="estado-material disponible">Disponible</span>
+            <a class="enlace-material" href="juegos/adivina-la-sena/">Jugar</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-material">
+          <div>
+            <div class="material-icono" aria-hidden="true">02</div>
+            <h3>Adivina el signo Braille</h3>
+            <p>
+              Observe el signo Braille y seleccione la letra, número o símbolo correspondiente.
+              Actividad dirigida al reconocimiento inicial del sistema Braille.
+            </p>
+          </div>
+
+          <div class="tarjeta-pie">
+            <span class="estado-material construccion">En construcción</span>
+            <a class="enlace-material" href="juegos/adivina-el-signo-braille/">Próximamente</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-material">
+          <div>
+            <div class="material-icono" aria-hidden="true">03</div>
+            <h3>Memoria visual</h3>
+            <p>
+              Juego de cartas para encontrar parejas entre palabras, señas, imágenes o signos Braille,
+              fortaleciendo atención y memoria visual.
+            </p>
+          </div>
+
+          <div class="tarjeta-pie">
+            <span class="estado-material construccion">En construcción</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-material disponible">
+          <div>
+            <div class="material-icono" aria-hidden="true">04</div>
+            <h3>Emparejando</h3>
+            <p>
+              Actividad para encontrar pares relacionados y fortalecer memoria visual, atención,
+              asociación de imágenes y reconocimiento de palabras mediante niveles progresivos.
+            </p>
+          </div>
+
+          <div class="tarjeta-pie">
+            <span class="estado-material disponible">Disponible</span>
+            <a class="enlace-material" href="juegos/emparejando/">Jugar</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-material disponible">
+          <div>
+            <div class="material-icono" aria-hidden="true">05</div>
+            <h3>Cuenta y responde</h3>
+            <p>
+              Juego de conteo visual para observar objetos, elegir la cantidad correcta y avanzar por niveles
+              con estrellas de logro y retroalimentación inmediata.
+            </p>
+          </div>
+
+          <div class="tarjeta-pie">
+            <span class="estado-material disponible">Disponible</span>
+            <a class="enlace-material" href="juegos/cuenta-y-responde/">Jugar</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-material">
+          <div>
+            <div class="material-icono" aria-hidden="true">06</div>
+            <h3>Escribe y convierte a Braille</h3>
+            <p>
+              Recurso interactivo para escribir palabras, visualizar su representación en Braille y apoyar
+              actividades de reconocimiento inicial.
+            </p>
+          </div>
+
+          <div class="tarjeta-pie">
+            <span class="estado-material construccion">En construcción</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-material">
+          <div>
+            <div class="material-icono" aria-hidden="true">07</div>
+            <h3>Ordena la secuencia</h3>
+            <p>
+              Actividad para organizar pasos, rutinas o acciones en orden lógico usando apoyos visuales y consignas simples.
+            </p>
+          </div>
+
+          <div class="tarjeta-pie">
+            <span class="estado-material construccion">En construcción</span>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <section class="nota" aria-labelledby="titulo-version">
+      <h2 id="titulo-version">Versión inicial</h2>
+      <p>
+        Esta página funciona como menú central de los juegos interactivos. Cada tarjeta dirigirá a una página propia
+        del juego, manteniendo la identidad visual de las plataformas CREBE.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-bloque footer-marca">
+        <img
+          class="footer-logo"
+          src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png"
+          alt="Logo del CREBE Señor de los Milagros - Ucayali"
+        >
+
+        <div>
+          <h2>Juegos Interactivos Accesibles</h2>
+          <p>
+            Plataforma de juegos digitales para fortalecer la práctica educativa mediante actividades visuales,
+            lúdicas y accesibles.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bloque">
+        <h2>Módulos principales</h2>
+        <p>
+          <a href="https://gabriel-lsp.github.io/capacitaciones-crebe-ucayali/">Capacitaciones CREBE</a><br>
+          <a href="https://gabriel-lsp.github.io/banco-digital-accesible/">Banco Digital Accesible</a><br>
+          <a href="https://gabriel-lsp.github.io/materiales-educativos-accesibles/">Materiales Educativos Accesibles</a><br>
+          <a href="https://gabriel-lsp.github.io/noti-inclusivos/">Noti Inclusivo</a><br>
+          <a href="https://gabriel-lsp.github.io/repositorio-accesible/">Repositorio Accesible</a><br>
+        </p>
+      </div>
+
+      <div class="footer-bloque">
+        <h2>Contacto CREBE</h2>
+        <p>
+          CREBE "Señor de los Milagros" - Ucayali<br>
+          Correo: senordelosmilagroscrebe@gmail.com<br>
+          Horario: lunes a viernes, 8:00 a.m. - 12:00 p.m.<br>
+          Dirección: I.E. Santa Clara 64039<br>
+          Avenida Santa Clara mz d lt 20<br>
+          Coronel Portillo-Manantay<br>
+          <a href="https://www.facebook.com/CREBESM" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+          <a href="https://www.tiktok.com/@crebe.sm.ucayali?_r=1&_t=ZS-97Qjebz1I0b" target="_blank" rel="noopener noreferrer">TikTok</a><br>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-final">
+      <p>
+        © 2026 Gabriel Berrospi. Desarrollo original. Uso institucional autorizado al CREBE "Señor de los Milagros" - Ucayali.
+      </p>
+    </div>
+  </footer>
+  <script src="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.js?v=6" defer></script>
+</body>
+</html>

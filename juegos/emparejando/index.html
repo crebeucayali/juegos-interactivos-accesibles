@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Juego interactivo accesible Emparejando para asociar imágenes, palabras, señas y signos mediante niveles progresivos.">
+  <meta name="author" content="Gabriel Berrospi">
+  <title>Emparejando | JIA</title>
+  <link rel="stylesheet" href="estilos.css?v=1">
+  <link rel="stylesheet" href="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.css?v=6">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header class="cabecera">
+    <div class="patron-portada" aria-hidden="true"></div>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca marca-institucional" href="../../index.html" aria-label="Volver al inicio de Juegos Interactivos Accesibles">
+        <img class="marca-logo-superior" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <span class="marca-texto-superior">
+          <span class="marca-modulo">Juegos Interactivos Accesibles</span>
+          <span class="marca-nombre-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+          <span class="marca-detalle-institucional">Centro de Recursos de Educación Básica Especial</span>
+        </span>
+      </a>
+
+      <div class="enlaces-cabecera">
+        <a href="../../index.html" class="enlace-cabecera">Volver a JIA</a>
+        <a href="https://crebe-ucayali.netlify.app/" class="enlace-cabecera">Inicio principal</a>
+        <a href="https://gabriel-lsp.github.io/accesos-complementarios/contacto.html" class="enlace-cabecera">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="portada">
+      <p class="etiqueta">Juego interactivo accesible</p>
+      <h1>Emparejando</h1>
+      <p class="subtitulo">
+        Actividad de asociación visual para encontrar pares relacionados, fortalecer memoria, atención,
+        reconocimiento de imágenes y comprensión de palabras mediante niveles progresivos.
+      </p>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="panel-juego" aria-labelledby="titulo-juego">
+      <div class="panel-encabezado">
+        <div>
+          <p class="sobretitulo">Memoria y asociación</p>
+          <h2 id="titulo-juego">Encuentra las parejas</h2>
+          <p class="texto-panel">
+            Selecciona dos tarjetas y observa si forman una pareja. El juego inicia con pocas tarjetas y aumenta
+            la cantidad de pares por nivel, para graduar la dificultad sin perder claridad visual.
+          </p>
+        </div>
+      </div>
+
+      <div class="configuracion" aria-label="Configuración del juego">
+        <div class="campo">
+          <label for="nombre-participante">Nombre del participante</label>
+          <input id="nombre-participante" type="text" placeholder="Escribe tu nombre">
+        </div>
+
+        <div class="campo">
+          <label for="nivel-juego">Nivel</label>
+          <select id="nivel-juego">
+            <option value="1">Nivel 1: 2 pares</option>
+            <option value="2">Nivel 2: 3 pares</option>
+            <option value="3">Nivel 3: 4 pares</option>
+            <option value="4">Nivel 4: 5 pares</option>
+            <option value="5">Nivel 5: 6 pares</option>
+            <option value="6">Nivel 6: 7 pares</option>
+            <option value="7">Nivel 7: 8 pares</option>
+            <option value="8">Nivel 8: 9 pares</option>
+          </select>
+        </div>
+
+        <button id="iniciar-juego" class="boton" type="button">Iniciar juego</button>
+      </div>
+
+      <section class="indicadores" aria-label="Indicadores del juego">
+        <div class="indicador"><strong id="nivel-actual">1</strong><span>Nivel</span></div>
+        <div class="indicador"><strong id="pares-encontrados">0</strong><span>Pares</span></div>
+        <div class="indicador"><strong id="intentos">0</strong><span>Intentos</span></div>
+        <div class="indicador"><strong id="movimientos">0</strong><span>Movimientos</span></div>
+      </section>
+
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite">
+        Presiona iniciar juego para cargar las primeras tarjetas.
+      </p>
+
+      <section class="tablero" id="tablero" aria-label="Tablero de tarjetas"></section>
+
+      <div class="acciones-juego">
+        <button id="nivel-anterior" class="boton secundario" type="button">Nivel anterior</button>
+        <button id="siguiente-nivel" class="boton secundario" type="button">Siguiente nivel</button>
+        <button id="reiniciar" class="boton secundario" type="button">Reiniciar nivel</button>
+      </div>
+    </section>
+
+    <section class="panel-secundario" aria-labelledby="titulo-criterios">
+      <h2 id="titulo-criterios">Criterios de uso pedagógico</h2>
+      <p>
+        El juego puede utilizarse en sesiones breves para practicar atención sostenida, memoria visual,
+        asociación de elementos y reconocimiento de vocabulario cotidiano. El adulto puede leer las tarjetas,
+        dar pistas o reducir el nivel cuando el estudiante requiera mayor apoyo.
+      </p>
+
+      <div class="criterios">
+        <article class="criterio">
+          <h3>Niveles iniciales</h3>
+          <p>Trabajan con menos pares y son adecuados para familiarización, práctica guiada o primer contacto.</p>
+        </article>
+
+        <article class="criterio">
+          <h3>Niveles medios</h3>
+          <p>Aumentan la cantidad de tarjetas y demandan mayor atención, memoria y seguimiento de turnos.</p>
+        </article>
+
+        <article class="criterio">
+          <h3>Niveles altos</h3>
+          <p>Plantean más pares y pueden aplicarse como reto final, siempre respetando el ritmo del participante.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reconocimiento" class="reconocimiento" hidden aria-labelledby="titulo-reconocimiento">
+      <h2 id="titulo-reconocimiento">Reconocimiento simbólico</h2>
+      <div class="constancia">
+        <p class="institucion">Juegos Interactivos Accesibles</p>
+        <h3>Constancia simbólica de logro</h3>
+        <p>Se reconoce a:</p>
+        <p id="nombre-constancia" class="nombre">Participante</p>
+        <p>por completar el <span id="nivel-constancia">nivel 1</span> del juego Emparejando.</p>
+        <p>Fecha: <span id="fecha-constancia"></span></p>
+        <p class="aclaracion">Este reconocimiento tiene valor educativo y motivacional.</p>
+      </div>
+      <div class="botones-reconocimiento">
+        <button id="imprimir-reconocimiento" class="boton" type="button">Imprimir reconocimiento</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-bloque footer-marca">
+        <img class="footer-logo" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <div>
+          <h2>Emparejando</h2>
+          <p>
+            Juego interactivo de apoyo para memoria visual, asociación de pares y reconocimiento de vocabulario.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bloque">
+        <h2>Enlaces</h2>
+        <p>
+          <a href="../../index.html">Volver a JIA</a><br>
+          <a href="https://crebe-ucayali.netlify.app/">Inicio principal CREBE</a><br>
+          <a href="https://gabriel-lsp.github.io/accesos-complementarios/contacto.html">Contacto institucional</a>
+        </p>
+      </div>
+
+      <div class="footer-bloque">
+        <h2>Contacto CREBE</h2>
+        <p>
+          CREBE "Señor de los Milagros" - Ucayali<br>
+          Correo: senordelosmilagroscrebe@gmail.com<br>
+          Horario: lunes a viernes, 8:00 a.m. - 12:00 p.m.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-final">
+      <p>© 2026 Gabriel Berrospi. Desarrollo original. Uso institucional autorizado al CREBE "Señor de los Milagros" - Ucayali.</p>
+    </div>
+  </footer>
+
+  <script src="app.js?v=1" defer></script>
+  <script src="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.js?v=6" defer></script>
+</body>
+</html>

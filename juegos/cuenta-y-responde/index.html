@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Juego interactivo accesible Cuenta y responde para practicar conteo visual, atención y reconocimiento de cantidades por niveles progresivos.">
+  <meta name="author" content="Gabriel Berrospi">
+  <title>Cuenta y responde | JIA</title>
+  <link rel="stylesheet" href="estilos.css?v=1">
+  <link rel="stylesheet" href="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.css?v=6">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header class="cabecera">
+    <div class="patron-portada" aria-hidden="true"></div>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca marca-institucional" href="../../index.html" aria-label="Volver al inicio de Juegos Interactivos Accesibles">
+        <img class="marca-logo-superior" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <span class="marca-texto-superior">
+          <span class="marca-modulo">Juegos Interactivos Accesibles</span>
+          <span class="marca-nombre-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+          <span class="marca-detalle-institucional">Centro de Recursos de Educación Básica Especial</span>
+        </span>
+      </a>
+
+      <div class="enlaces-cabecera">
+        <a href="../../index.html" class="enlace-cabecera">Volver a JIA</a>
+        <a href="https://crebe-ucayali.netlify.app/" class="enlace-cabecera">Inicio principal</a>
+        <a href="https://gabriel-lsp.github.io/accesos-complementarios/contacto.html" class="enlace-cabecera">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="portada">
+      <p class="etiqueta">Juego interactivo accesible</p>
+      <h1>Cuenta y responde</h1>
+      <p class="subtitulo">
+        Actividad visual para contar objetos, elegir la cantidad correcta y avanzar por niveles progresivos
+        con retroalimentación inmediata y estrellas de logro.
+      </p>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="panel-juego" aria-labelledby="titulo-juego">
+      <div class="panel-encabezado">
+        <div>
+          <p class="sobretitulo">Conteo visual</p>
+          <h2 id="titulo-juego">¿Cuántos objetos hay?</h2>
+          <p class="texto-panel">
+            Observa el recuadro, cuenta los objetos y selecciona la respuesta correcta. Cada nivel aumenta
+            la cantidad máxima de elementos para reforzar atención, conteo y discriminación visual.
+          </p>
+        </div>
+      </div>
+
+      <div class="configuracion" aria-label="Configuración del juego">
+        <div class="campo">
+          <label for="nombre-participante">Nombre del participante</label>
+          <input id="nombre-participante" type="text" placeholder="Escribe tu nombre">
+        </div>
+
+        <div class="campo">
+          <label for="nivel-juego">Nivel inicial</label>
+          <select id="nivel-juego">
+            <option value="1">Nivel 1: cantidades 1 a 3</option>
+            <option value="2">Nivel 2: cantidades 1 a 5</option>
+            <option value="3">Nivel 3: cantidades 1 a 7</option>
+            <option value="4">Nivel 4: cantidades 1 a 9</option>
+            <option value="5">Nivel 5: cantidades 1 a 10</option>
+            <option value="6">Nivel 6: cantidades 1 a 12</option>
+          </select>
+        </div>
+
+        <button id="iniciar-juego" class="boton" type="button">Iniciar juego</button>
+      </div>
+
+      <section class="juego-conteo" aria-label="Zona del juego de conteo">
+        <div class="barra-progreso" aria-label="Progreso del juego">
+          <span>Nivel: <strong id="nivel-actual">1/6</strong></span>
+          <span>Estrellas: <strong id="estrellas">0/3</strong></span>
+          <span>Ronda: <strong id="ronda">1/5</strong></span>
+        </div>
+
+        <div class="escenario" id="escenario" aria-label="Recuadro con objetos para contar"></div>
+
+        <div class="opciones" id="opciones" aria-label="Opciones de respuesta"></div>
+
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite">
+          Presiona iniciar juego para comenzar.
+        </p>
+
+        <div class="acciones-juego">
+          <button id="siguiente-ronda" class="boton" type="button">Siguiente ronda</button>
+          <button id="nivel-anterior" class="boton secundario" type="button">Nivel anterior</button>
+          <button id="siguiente-nivel" class="boton secundario" type="button">Siguiente nivel</button>
+          <button id="reiniciar" class="boton secundario" type="button">Reiniciar</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel-secundario" aria-labelledby="titulo-criterios">
+      <h2 id="titulo-criterios">Criterios de uso pedagógico</h2>
+      <p>
+        El juego puede utilizarse para reforzar conteo, atención visual, asociación número-cantidad y seguimiento
+        de consignas simples. Se recomienda iniciar en niveles bajos y acompañar con preguntas como "¿cuántos ves?"
+        o "volvamos a contar juntos" cuando sea necesario.
+      </p>
+
+      <div class="criterios">
+        <article class="criterio">
+          <h3>Niveles iniciales</h3>
+          <p>Trabajan cantidades pequeñas, ideales para familiarización, conteo guiado y reconocimiento básico.</p>
+        </article>
+
+        <article class="criterio">
+          <h3>Niveles intermedios</h3>
+          <p>Incrementan la cantidad de objetos y exigen mayor permanencia atencional antes de responder.</p>
+        </article>
+
+        <article class="criterio">
+          <h3>Niveles avanzados</h3>
+          <p>Usan cantidades mayores y distractores numéricos cercanos para fortalecer discriminación y precisión.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reconocimiento" class="reconocimiento" hidden aria-labelledby="titulo-reconocimiento">
+      <h2 id="titulo-reconocimiento">Reconocimiento simbólico</h2>
+      <div class="constancia">
+        <p class="institucion">Juegos Interactivos Accesibles</p>
+        <h3>Constancia simbólica de logro</h3>
+        <p>Se reconoce a:</p>
+        <p id="nombre-constancia" class="nombre">Participante</p>
+        <p>por completar el <span id="nivel-constancia">nivel 1</span> del juego Cuenta y responde.</p>
+        <p>Fecha: <span id="fecha-constancia"></span></p>
+        <p class="aclaracion">Este reconocimiento tiene valor educativo y motivacional.</p>
+      </div>
+      <div class="botones-reconocimiento">
+        <button id="imprimir-reconocimiento" class="boton" type="button">Imprimir reconocimiento</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-bloque footer-marca">
+        <img class="footer-logo" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <div>
+          <h2>Cuenta y responde</h2>
+          <p>
+            Juego interactivo de apoyo para conteo visual, atención, reconocimiento de cantidades y asociación número-cantidad.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bloque">
+        <h2>Enlaces</h2>
+        <p>
+          <a href="../../index.html">Volver a JIA</a><br>
+          <a href="https://crebe-ucayali.netlify.app/">Inicio principal CREBE</a><br>
+          <a href="https://gabriel-lsp.github.io/accesos-complementarios/contacto.html">Contacto institucional</a>
+        </p>
+      </div>
+
+      <div class="footer-bloque">
+        <h2>Contacto CREBE</h2>
+        <p>
+          CREBE "Señor de los Milagros" - Ucayali<br>
+          Correo: senordelosmilagroscrebe@gmail.com<br>
+          Horario: lunes a viernes, 8:00 a.m. - 12:00 p.m.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-final">
+      <p>© 2026 Gabriel Berrospi. Desarrollo original. Uso institucional autorizado al CREBE "Señor de los Milagros" - Ucayali.</p>
+    </div>
+  </footer>
+
+  <script src="app.js?v=1" defer></script>
+  <script src="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.js?v=6" defer></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Juego interactivo accesible para adivinar señas de la Lengua de Señas Peruana por niveles.">
+  <title>Adivina la seña | JIA</title>
+  <link rel="stylesheet" href="estilos.css?v=3">
+  <link rel="stylesheet" href="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.css?v=6">
+  <style>
+    body .cabecera{position:relative!important;overflow:hidden!important;padding:30px 18px 145px!important;color:#ffffff!important;background:radial-gradient(circle at 84% 70%,rgba(255,255,255,.11) 0 22%,transparent 23%),radial-gradient(circle at 86% 74%,rgba(255,255,255,.08) 0 36%,transparent 37%),linear-gradient(135deg,#0b3550 0%,#0f4f57 48%,#0f766e 100%)!important;}
+    body .cabecera::after{display:none!important;content:none!important;}
+    body .patron-portada{position:absolute!important;inset:0!important;z-index:0!important;overflow:hidden!important;pointer-events:none!important;background-image:url("../../patron-shipibo.webp?v=2")!important;background-repeat:repeat!important;background-size:cover!important;background-position:center!important;opacity:.30!important;filter:saturate(1.15) contrast(1.08)!important;}
+    body .cabecera .navegacion,body .cabecera .portada{position:relative!important;z-index:1!important;}
+    body .navegacion{max-width:1120px!important;margin:0 auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;flex-wrap:wrap!important;}
+    body .marca-institucional{display:inline-flex!important;align-items:center!important;gap:14px!important;max-width:min(560px,100%)!important;color:#ffffff!important;text-decoration:none!important;font-weight:900!important;font-size:1.05rem!important;}
+    body .marca-logo-superior{display:block!important;width:58px!important;height:58px!important;object-fit:contain!important;flex-shrink:0!important;padding:4px!important;background:rgba(255,255,255,.96)!important;border-radius:18px!important;box-shadow:0 10px 24px rgba(0,0,0,.14)!important;}
+    body .marca-texto-superior{display:block!important;padding-left:14px!important;border-left:2px solid rgba(255,255,255,.35)!important;text-shadow:0 2px 4px rgba(0,0,0,.28)!important;}
+    body .marca-modulo{display:block!important;margin:0 0 3px!important;color:#c9f7ee!important;font-size:.76rem!important;font-weight:900!important;line-height:1.15!important;letter-spacing:.16em!important;text-transform:uppercase!important;}
+    body .marca-nombre-institucional{display:block!important;color:#ffffff!important;font-size:1.02rem!important;font-weight:900!important;line-height:1.2!important;}
+    body .marca-detalle-institucional{display:block!important;margin-top:4px!important;color:rgba(255,255,255,.94)!important;font-size:.88rem!important;font-weight:750!important;line-height:1.25!important;}
+    body .enlaces-cabecera{display:flex!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:wrap!important;gap:12px!important;}
+    body .enlace-cabecera{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:46px!important;padding:10px 22px!important;border:1px solid rgba(255,255,255,.45)!important;border-radius:999px!important;color:#ffffff!important;text-decoration:none!important;font-size:1rem!important;font-weight:800!important;background:rgba(255,255,255,.08)!important;text-shadow:0 2px 4px rgba(0,0,0,.24)!important;}
+    body .enlace-cabecera:hover{color:#ffffff!important;background:rgba(255,255,255,.16)!important;}
+    body .portada{position:relative!important;z-index:1!important;max-width:1120px!important;margin:70px auto 0!important;}
+    body .etiqueta{margin:0 0 14px!important;color:#c9f7ee!important;font-size:.86rem!important;font-weight:900!important;letter-spacing:.18em!important;text-transform:uppercase!important;text-shadow:0 2px 4px rgba(0,0,0,.28)!important;}
+    body .portada h1{max-width:900px!important;margin:0 0 22px!important;color:#ffffff!important;font-family:Georgia,"Times New Roman",serif!important;font-size:clamp(2.5rem,5.8vw,4.15rem)!important;line-height:1.04!important;letter-spacing:-.04em!important;text-shadow:0 3px 5px rgba(0,0,0,.22)!important;}
+    body .subtitulo{max-width:880px!important;margin:0!important;color:rgba(255,255,255,.96)!important;font-size:1.22rem!important;line-height:1.65!important;text-shadow:0 2px 4px rgba(0,0,0,.28)!important;}
+    @media(max-width:700px){body .cabecera{padding:26px 18px 116px!important;}body .navegacion{align-items:flex-start!important;flex-direction:column!important;}body .portada{margin-top:54px!important;}body .marca-institucional{align-items:flex-start!important;}body .marca-logo-superior{width:52px!important;height:52px!important;border-radius:16px!important;}body .marca-texto-superior{padding-left:12px!important;}body .marca-nombre-institucional{font-size:.94rem!important;}body .marca-detalle-institucional{font-size:.82rem!important;}body .enlaces-cabecera{justify-content:flex-start!important;}}
+  </style>
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header class="cabecera">
+    <div class="patron-portada" aria-hidden="true"></div>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca marca-institucional" href="../../index.html" aria-label="Volver al inicio de Juegos Interactivos Accesibles">
+        <img class="marca-logo-superior" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <span class="marca-texto-superior">
+          <span class="marca-modulo">Juegos Interactivos Accesibles</span>
+          <span class="marca-nombre-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+          <span class="marca-detalle-institucional">Centro de Recursos de Educación Básica Especial</span>
+        </span>
+      </a>
+      <div class="enlaces-cabecera">
+        <a href="../../index.html" class="enlace-cabecera">Volver a JIA</a>
+        <a href="https://crebe-ucayali.netlify.app/" class="enlace-cabecera">Inicio principal</a>
+        <a href="https://gabriel-lsp.github.io/accesos-complementarios/paginas/contacto.html" class="enlace-cabecera">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="portada">
+      <p class="etiqueta">ECOSISTEMA VIRTUAL ACCESIBLE</p>
+      <h1>Juegos Interactivos Accesibles</h1>
+      <p class="subtitulo">Actividades digitales para practicar Lengua de Señas Peruana y sistema Braille mediante retos visuales, memoria, asociación y reconocimiento de signos.</p>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="panel-juego" aria-labelledby="titulo-juego">
+      <div class="panel-encabezado">
+        <div>
+          <p class="sobretitulo">Reconocimiento visual</p>
+          <h2 id="titulo-juego">Adivina la seña</h2>
+          <p class="texto-panel">El juego carga señas del Banco Digital Accesible y propone cinco alternativas de respuesta. Puedes elegir el nivel y registrar el nombre del participante.</p>
+        </div>
+      </div>
+
+      <div class="configuracion">
+        <div class="campo">
+          <label for="nombre-participante">Nombre del participante</label>
+          <input id="nombre-participante" type="text" placeholder="Escribe tu nombre">
+        </div>
+        <div class="campo">
+          <label for="nivel-juego">Nivel</label>
+          <select id="nivel-juego">
+            <option value="basico">Básico</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+          </select>
+        </div>
+        <button id="iniciar-juego" class="boton" type="button">Iniciar juego</button>
+      </div>
+
+      <div class="zona-juego">
+        <section class="visor-sena" aria-labelledby="titulo-visor">
+          <h3 id="titulo-visor" class="solo-lectores">Seña presentada</h3>
+          <img id="imagen-sena" src="" alt="" hidden>
+          <p id="categoria-sena" class="categoria">Esperando inicio</p>
+          <p id="pista-sena" class="pista">Presiona iniciar juego para comenzar.</p>
+        </section>
+
+        <section class="panel-respuestas" aria-labelledby="titulo-respuestas">
+          <h3 id="titulo-respuestas" class="solo-lectores">Alternativas</h3>
+          <div class="indicadores" aria-label="Indicadores del juego">
+            <div class="indicador"><strong id="racha">0</strong><span>Racha</span></div>
+            <div class="indicador"><strong id="meta">5</strong><span>Meta</span></div>
+            <div class="indicador"><strong id="preguntas">0</strong><span>Intentos</span></div>
+          </div>
+          <div id="alternativas" class="alternativas"></div>
+          <p id="mensaje" class="mensaje">Elige iniciar para cargar las primeras señas.</p>
+          <div class="acciones-juego">
+            <button id="siguiente" class="boton secundario" type="button" disabled>Siguiente seña</button>
+            <button id="reiniciar" class="boton secundario" type="button">Reiniciar</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="panel-secundario" aria-labelledby="titulo-criterios">
+      <h2 id="titulo-criterios">Criterios de uso</h2>
+      <p>El juego debe usarse como apoyo educativo para practicar reconocimiento visual de señas. La selección de niveles es referencial y puede acompañarse con orientación docente o familiar.</p>
+      <div class="criterios">
+        <article class="criterio"><h3>Básico</h3><p>Señas cotidianas, familiares y escolares.</p></article>
+        <article class="criterio"><h3>Intermedio</h3><p>Señas de mayor variedad temática.</p></article>
+        <article class="criterio"><h3>Avanzado</h3><p>Señas con mayor complejidad de comprensión o uso.</p></article>
+      </div>
+    </section>
+
+    <section id="reconocimiento" class="reconocimiento" hidden aria-labelledby="titulo-reconocimiento">
+      <h2 id="titulo-reconocimiento">Reconocimiento simbólico</h2>
+      <div class="constancia">
+        <p class="institucion">Juegos Interactivos Accesibles</p>
+        <h3>Constancia simbólica de logro</h3>
+        <p>Se reconoce a:</p>
+        <p id="nombre-constancia" class="nombre">Participante</p>
+        <p>por completar el <span id="nivel-constancia">nivel básico</span> del juego Adivina la seña.</p>
+        <p>Fecha: <span id="fecha-constancia"></span></p>
+        <p class="aclaracion">Este reconocimiento tiene valor educativo y motivacional.</p>
+      </div>
+      <div class="botones-reconocimiento">
+        <button id="descargar-reconocimiento" class="boton" type="button">Descargar reconocimiento</button>
+        <button id="imprimir-reconocimiento" class="boton secundario" type="button">Imprimir</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-bloque footer-marca">
+        <img class="footer-logo" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <div>
+          <h2>Adivina la seña</h2>
+          <p>Juego interactivo de apoyo para el reconocimiento visual de la Lengua de Señas Peruana.</p>
+        </div>
+      </div>
+      <div class="footer-bloque">
+        <h2>Enlaces</h2>
+        <p><a href="../../index.html">Volver a JIA</a><br><a href="https://gabriel-lsp.github.io/banco-digital-accesible/">Banco Digital Accesible</a><br><a href="https://gabriel-lsp.github.io/accesos-complementarios/paginas/contacto.html">Contacto Institucional</a></p>
+      </div>
+      <div class="footer-bloque">
+        <h2>Contacto CREBE</h2>
+        <p>CREBE "Señor de los Milagros" - Ucayali<br>Correo: senordelosmilagroscrebe@gmail.com<br>Horario: lunes a viernes, 8:00 a.m. - 12:00 p.m.</p>
+      </div>
+    </div>
+    <div class="footer-final"><p>© 2026 Gabriel Berrospi. Desarrollo original. Uso institucional autorizado al CREBE "Señor de los Milagros" - Ucayali.</p></div>
+  </footer>
+
+  <script src="app.js?v=3" defer></script>
+  <script src="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.js?v=6" defer></script>
+</body>
+</html>
